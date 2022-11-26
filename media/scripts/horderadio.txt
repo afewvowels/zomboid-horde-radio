@@ -1,0 +1,45 @@
+module Base
+{
+    imports
+    {
+        Base,
+    }
+
+    item HordeRadio
+    {
+        Type = Radio,
+        Icon = WalkieTalkieBudget,
+        Weight = 0.2,
+        DisplayName = Horde Radio,
+        UseDelta = 0.007,
+        UseWhileEquipped = FALSE,
+        DisappearOnUse = FALSE,
+        TwoWay = FALSE,
+        TransmitRange = 0,
+        MicRange = 1,
+        BaseVolumeRange = 8,
+        IsPortable = TRUE,
+        IsTelevision = FALSE,
+        MinChannel = 0,
+        MaxChannel = 0,
+        UsesBattery = FALSE,
+        IsHighTier = FALSE,
+        Tooltip = Use this to trigger horde events,
+        WorldStaticModel = WalkieTalkieToy,
+        StaticModel = WalkieTalkieToy,
+        AttachmentType = Walkie,
+    }
+
+    recipe Convert to Horde Radio
+    {
+        Radio.WalkieTalkie1/Radio.WalkieTalkie2/Radio.WalkieTalkie3/Radio.WalkieTalkie4/Radio.WalkieTalkie5,
+        keep [Recipe.GetItemTypes.Screwdriver],
+        NoBrokenItems:true,
+        NeedToBeLearn:false,
+        Result:Base.HordeRadio,
+        Time:100.0,
+        OnCreate:Recipe.OnCreate.RadioCraft,
+        OnGiveXP:Recipe.OnGiveXP.RadioCraft,
+        Category:Electrical,
+    }
+}
