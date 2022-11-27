@@ -15,6 +15,7 @@ local function activateRadio(p, radio)
     worldSoundManager:addSound(nil, x, y, z, intensity, intensity)
 
     local sayString = "Activated with intensity set to " .. intensity .. "...here we go!"
+    p:Say(sayString)
     -- radio:Say(sayString)
 end
 
@@ -46,15 +47,15 @@ local function AddHordeRadioContextMenu(player, context, items)
 
     childMenu:addOption(currentIntensityString);
 
-    childMenu:addOption(getText("IGUI_hordeRadio_intensity_1"), playerObj, function() RadioUtils:SetRadioIntensity(playerObj, item, 10) end, item);
-    childMenu:addOption(getText("IGUI_hordeRadio_intensity_2"), playerObj, function() RadioUtils:SetRadioIntensity(playerObj, item, 20) end, item);
-    childMenu:addOption(getText("IGUI_hordeRadio_intensity_3"), playerObj, function() RadioUtils:SetRadioIntensity(playerObj, item, 30) end, item);
-    childMenu:addOption(getText("IGUI_hordeRadio_intensity_4"), playerObj, function() RadioUtils:SetRadioIntensity(playerObj, item, 50) end, item);
-    childMenu:addOption(getText("IGUI_hordeRadio_intensity_5"), playerObj, function() RadioUtils:SetRadioIntensity(playerObj, item, 100) end, item);
-    childMenu:addOption(getText("IGUI_hordeRadio_intensity_6"), playerObj, function() RadioUtils:SetRadioIntensity(playerObj, item, 200) end, item);
-    childMenu:addOption(getText("IGUI_hordeRadio_intensity_7"), playerObj, function() RadioUtils:SetRadioIntensity(playerObj, item, 500) end, item);
-    childMenu:addOption(getText("IGUI_hordeRadio_intensity_8"), playerObj, function() RadioUtils:SetRadioIntensity(playerObj, item, 1000) end, item);
-    childMenu:addOption(getText("IGUI_hordeRadio_intensity_9"), playerObj, function() RadioUtils:SetRadioIntensity(playerObj, item, 999999999) end, item);
+    childMenu:addOption(getText("IGUI_hordeRadio_intensity_1"), playerObj, function() RadioUtils:SetRadioIntensity(playerObj, item, 100) end, item);
+    childMenu:addOption(getText("IGUI_hordeRadio_intensity_2"), playerObj, function() RadioUtils:SetRadioIntensity(playerObj, item, 200) end, item);
+    childMenu:addOption(getText("IGUI_hordeRadio_intensity_3"), playerObj, function() RadioUtils:SetRadioIntensity(playerObj, item, 300) end, item);
+    childMenu:addOption(getText("IGUI_hordeRadio_intensity_4"), playerObj, function() RadioUtils:SetRadioIntensity(playerObj, item, 5000) end, item);
+    childMenu:addOption(getText("IGUI_hordeRadio_intensity_5"), playerObj, function() RadioUtils:SetRadioIntensity(playerObj, item, 1000) end, item);
+    childMenu:addOption(getText("IGUI_hordeRadio_intensity_6"), playerObj, function() RadioUtils:SetRadioIntensity(playerObj, item, 2000) end, item);
+    childMenu:addOption(getText("IGUI_hordeRadio_intensity_7"), playerObj, function() RadioUtils:SetRadioIntensity(playerObj, item, 5000) end, item);
+    childMenu:addOption(getText("IGUI_hordeRadio_intensity_8"), playerObj, function() RadioUtils:SetRadioIntensity(playerObj, item, 10000) end, item);
+    childMenu:addOption(getText("IGUI_hordeRadio_intensity_9"), playerObj, function() RadioUtils:SetRadioIntensity(playerObj, item, 100000) end, item);
 end
 
 local firstUpdate = true;
